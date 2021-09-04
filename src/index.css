@@ -23,6 +23,7 @@ body {
     color: white;
   }
   :root {
+    color-scheme: dark;
     --message-received-background: #3e4042;
     --message-received-color: white;
   }
