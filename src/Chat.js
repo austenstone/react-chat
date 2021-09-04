@@ -31,7 +31,7 @@ export function Chat() {
                 <div ref={bottomMessageRef}></div>
             </div>
             <form onSubmit={onSubmit}>
-                <input name="message" placeholder="Aa" value={message} onChange={(e) => setMessage(e.target.value)}></input>
+                <input name="message" placeholder="Aa" autocomplete="off" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button type="submit">Send</button>
             </form>
         </chat>
