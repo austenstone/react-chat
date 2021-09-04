@@ -1,6 +1,6 @@
 import './Chat.css';
 
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import firebase from 'firebase/compat/app';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -13,6 +13,12 @@ export function Chat() {
     const [messages] = useCollectionData(query, { idField: 'id' });
     const [message, setMessage] = useState('');
 
+    const scrollToBottom = () => bottomMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+
+    useEffect(() => {
+        setTimeout(() => scrollToBottom(), 500)
+    }, []);
+
     const onSubmit = async (e) => {
         e.preventDefault();
         await messagesCollection.add({
@@ -21,7 +27,11 @@ export function Chat() {
             uid: auth.currentUser.uid,
         })
         setMessage('');
-        bottomMessageRef.current.scrollIntoView({ behavior: 'smooth' })
+        scrollToBottom();
+    }
+
+    const inputFocus = (e) => {
+        scrollToBottom();
     }
 
     return (
@@ -31,7 +41,7 @@ export function Chat() {
                 <div ref={bottomMessageRef}></div>
             </div>
             <form onSubmit={onSubmit}>
-                <input name="message" placeholder="Aa" autocomplete="off" value={message} onChange={(e) => setMessage(e.target.value)}></input>
+                <input name="message" placeholder="Aa" autocomplete="off" onFocus={inputFocus} value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button type="submit">Send</button>
             </form>
         </chat>
