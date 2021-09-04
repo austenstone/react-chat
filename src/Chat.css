@@ -9,7 +9,8 @@ chat {
 form {
     display: grid;
     grid-template-columns: 1fr auto;
-    margin: 15px 30px 30px 30px;
+    grid-gap: 15px;
+    margin: 10px;
 }
 
 input {
@@ -18,20 +19,24 @@ input {
     box-sizing: border-box;
     border-radius: 5px;
     outline: none;
-    border: 1px solid gray;
+    border: none;
+    background-color: #f0f2f5;
+    border-radius: 18px;
 }
 
 button {
-    margin-left: 15px;
+    background: #2e8bef;
+    color: white;
 }
 
 #messages {
     overflow-y: auto;
+    overflow-anchor: none;
+    padding: 0 10px;
 }
 
 message {
     display: flex;
-    padding: 0 10px;
     margin: 10px 0;
     align-items: flex-end;
 }
@@ -61,4 +66,13 @@ message.received .content {
 
 message.received {
     flex-direction: row-reverse;
+}
+
+.message-info {
+    color: #8a8d91;
+    font-size: 0.7em;
+}
+
+.message-date {
+    text-align: center;
 }

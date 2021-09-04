@@ -28,3 +28,7 @@ header a {
 .flexer {
     flex: 1;
 }
+
+header button {
+    background: none;
+}
