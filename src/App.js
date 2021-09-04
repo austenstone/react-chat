@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {user ? <Chat user={user} /> : <SignIn />}
+      {user ? <Chat /> : <SignIn />}
     </div>
   );
 }
@@ -24,8 +24,15 @@ function SignIn() {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
+  const signInWithFB = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(provider);
+  }
   return (
-    <button onClick={signInWithGoogle}>Sign in</button>
+    <div class="sign-in">
+      <button class="sign-in-google" onClick={signInWithGoogle}>Sign in with Google</button>
+      <button class="sign-in-google" onClick={signInWithFB}>Sign in with Facebook</button>
+    </div>
   )
 }
 

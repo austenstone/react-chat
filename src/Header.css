@@ -31,4 +31,10 @@ header a {
 
 header button {
     background: none;
+    box-shadow: none;
+    transition: 0.2s ease-in-out;
+}
+
+header button:hover {
+    background: rgb(255 255 255 / 10%);
 }

@@ -16,14 +16,9 @@ export function Chat() {
     const [message, setMessage] = useState('');
 
     let lastSize = 0;
-    query.onSnapshot({
-        // next: (e) => {
-        //     if (e.size !== lastSize) scrollToBottom();
-        // }
-    })
 
     useEffect(() => {
-        bottomMessageRef.current?.scrollIntoView({ behavior: 'smooth' })
+        // bottomMessageRef.current?.scrollIntoView({ behavior: 'smooth' })
         inputMessageRef.current?.focus();
     }, []);
 

@@ -18,3 +18,22 @@ button {
   line-height: 36px;
   cursor: pointer;
 }
+
+.sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sign-in button {
+  margin-bottom: 10px;
+}
+
+.sign-in-google {
+  background-color: #4285f4;
+  width: 240px;
+  height: 50px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  line-height: 48px;
+}
