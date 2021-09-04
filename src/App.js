@@ -29,9 +29,9 @@ function SignIn() {
     auth.signInWithPopup(provider);
   }
   return (
-    <div class="sign-in">
-      <button class="sign-in-google" onClick={signInWithGoogle}>Sign in with Google</button>
-      <button class="sign-in-google" onClick={signInWithFB}>Sign in with Facebook</button>
+    <div className="sign-in">
+      <button className="sign-in-google" onClick={signInWithGoogle}>Sign in with Google</button>
+      <button className="sign-in-google" onClick={signInWithFB}>Sign in with Facebook</button>
     </div>
   )
 }
