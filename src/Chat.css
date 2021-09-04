@@ -43,6 +43,7 @@ message .avatar {
 }
 
 message .content {
+    max-width: 550px;
     border-radius: 18px;
     padding: 8px 12px;
     margin: 0 10px;
