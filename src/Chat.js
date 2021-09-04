@@ -10,10 +10,16 @@ export function Chat() {
     const bottomMessageRef = useRef();
     const messagesCollection = firestore.collection('messages');
     const query = messagesCollection.orderBy('createdAt').limit(50);
-    const [messages] = useCollectionData(query, { idField: 'id' });
+    const [messages, loading, error] = useCollectionData(query, { idField: 'id', snapshotListenOptions: {} });
     const [message, setMessage] = useState('');
 
-    const scrollToBottom = () => bottomMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+    let lastSize = 0;
+    query.onSnapshot({
+        // next: (e) => {
+        //     if (e.size !== lastSize) scrollToBottom();
+        // }
+    })
+    const scrollToBottom = () => bottomMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
 
     useEffect(() => {
         setTimeout(() => scrollToBottom(), 500)
@@ -27,7 +33,7 @@ export function Chat() {
             uid: auth.currentUser.uid,
         })
         setMessage('');
-        scrollToBottom();
+        // scrollToBottom();
     }
 
     const inputFocus = (e) => {
