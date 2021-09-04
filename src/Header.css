@@ -1,0 +1,30 @@
+header {
+    background-color: #20232a;
+    color: #ffffff;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.actions,
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 7.5px;
+}
+
+header a {
+    color: #ffffff;
+    outline: none;
+    text-decoration: none;
+}
+
+.flexer {
+    flex: 1;
+}
