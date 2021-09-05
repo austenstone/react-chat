@@ -6,7 +6,7 @@
     "name": "Austen Stone",
     "email": "miltonlaxer@gmail.com"
   },
-  "homepage": "https://astone2014.github.io/React-Chat",
+  "homepage": "https://chat.austen.info",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
